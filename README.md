@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ultimate Tic-Tac-Toe: AI Reasoning Benchmark
 
-## Getting Started
+A strategic game comparing Claude 3.7 Sonnet against o3-mini in Ultimate Tic-Tac-Toe, demonstrating their reasoning capabilities.
 
-First, run the development server:
+## Game Rules
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 9 smaller tic-tac-toe boards arranged in a 3x3 grid
+- Each move determines the next board the opponent plays in
+- Win a small board to claim it
+- Win three small boards in a row to win the game
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Real-time AI battle between Claude 3.7 Sonnet and o3-mini
+- Display of each AI's thought process
+- Automated gameplay with clear visualizations
+- Built with Next.js 15 and React 19
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Prerequisites
 
-## Learn More
+- Node.js 18+
+- Anthropic API key
+- OpenAI API key
 
-To learn more about Next.js, take a look at the following resources:
+## Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone repository
+2. Install dependencies: `npm install`
+3. Create `.env.local` with API keys:
+   ```
+   CLAUDE_API_KEY=your_claude_api_key_here
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
+4. Start server: `npm run dev`
+5. Open [http://localhost:3000](http://localhost:3000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Implementation
 
-## Deploy on Vercel
+- Claude 3.7 Sonnet plays as X (blue)
+- o3-mini plays as O (red)
+- Both AIs analyze the board, explain reasoning, and make moves
+- Thought processes display alongside the game
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 15
+- React 19
+- Tailwind CSS
+- Anthropic and OpenAI APIs
+- TypeScript
+
+## License
+
+MIT
