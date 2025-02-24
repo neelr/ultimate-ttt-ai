@@ -1,0 +1,3695 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="/_next/static/chunks/%5Broot%20of%20the%20server%5D__8ebb6d._.css"
+      data-precedence="next_static/chunks/[root of the server]__8ebb6d._.css"
+    />
+    <link
+      rel="preload"
+      as="script"
+      fetchpriority="low"
+      href="/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc._.js"
+    />
+    <meta name="next-size-adjust" content="" />
+    <title>Ultimate Tic-Tac-Toe | claude 3.7 thinking vs. o3-mini</title>
+    <meta
+      name="description"
+      content="Watch AI battle in a strategic game of Ultimate Tic-Tac-Toe"
+    />
+    <link
+      rel="icon"
+      href="/favicon.ico?favicon.45db1c09.ico"
+      sizes="256x256"
+      type="image/x-icon"
+    />
+    <style>
+      ._container_19rae_1 {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100%;
+        width: 400px;
+        transition: 0.3s;
+        box-shadow: 0 0 16px #0000001f;
+        z-index: 2147483647;
+      }
+      ._container_visible_19rae_11 {
+        right: 0;
+      }
+      :root {
+        --primary: #009af7;
+        --primary-light: #e5f5fe;
+        --primary-light-bg: #f2faff;
+        --primary-light-bg-dm: #192837;
+        --primary-light-dm: #153a55;
+        --primary-hover: #3398ff;
+        --primary-pressed: #66b2ff;
+        --secondary: #66c2fa;
+        --secondary-dm: #0a6aa6;
+        --tg-background: #1a222d;
+        --tg-background-2: #242f3e;
+        --tg-stroke: #3b4655;
+        --success: #00b872;
+        --success-light-bg: #f2fbf8;
+        --success-light-bg-dm: #192a30;
+        --error: #ff2749;
+        --error-light: #fff4f6;
+        --error-light-hover: #ffdfe5;
+        --error-light-pressed: #ffcbd3;
+        --error-light-dm: #482333;
+        --error-light-dm-hover: #5a2335;
+        --error-light-dm-pressed: #6d2437;
+        --grayscale-secondary1: #68687b;
+        --grayscale-bg-darker: #f3f4f7;
+        --tg-secondary: #c1c3c7;
+        --grayscale-tetriary2: #d0d0d7;
+        --black: #111111;
+        --white: #ffffff;
+        --primary2: #43434e;
+        --grayscale-gs-background-darker: #f3f4f7;
+        --grayscale-gs-quarterly-1: #dfdfe4;
+        --bacground: #f5f5f5;
+        --bacground-dark: #282828;
+      }
+      :root {
+        --size-extraTiny: 2px;
+        --size-tiny: 4px;
+        --size-extraSmall: 6px;
+        --size-small: 8px;
+        --size-medium: 12px;
+        --size-normal: 24px;
+        --size-large: 32px;
+        --size-xLarge: 48px;
+        --size-xxLarge: 56px;
+        --size-extraLarge: 64px;
+        --font-size-tiny: 12px;
+        --font-size-small: 16px;
+        --font-size-medium: 18px;
+        --font-size-large: 32px;
+        --weight-thin: 100;
+        --weight-extraLight: 200;
+        --weight-light: 300;
+        --weight-normal: 400;
+        --weight-medium: 500;
+        --weight-semiBold: 600;
+        --weight-bold: 700;
+        --weight-extraBold: 800;
+      }
+      ._popupContainer_1l893_1 {
+        background: var(--white);
+        width: 100%;
+        height: 100vh;
+        transition: 0.3s;
+      }
+      ._popupContainer_1l893_1 *,
+      ._popupContainer_1l893_1 + * {
+        color: var(--black);
+      }
+      ._popupContainerDark_1l893_10 {
+        background: var(--tg-background);
+        color: var(--white);
+      }
+      ._popupContainerDark_1l893_10 *,
+      ._popupContainerDark_1l893_10 + * {
+        color: var(--white);
+      }
+      ._header_qd86s_1 {
+        box-shadow: 0 1px 8px #0000001a;
+      }
+      ._headerDark_qd86s_4 {
+        box-shadow: 0 1px 8px #00000080;
+      }
+      ._extraTiny_koft3_1 {
+        padding: var(--size-extraTiny);
+      }
+      ._extraTinyVR_koft3_5 {
+        padding-top: var(--size-extraTiny);
+        padding-bottom: var(--size-extraTiny);
+      }
+      ._extraTinyHR_koft3_10 {
+        padding-left: var(--size-extraTiny);
+        padding-right: var(--size-extraTiny);
+      }
+      ._extraTinyTop_koft3_15 {
+        padding-top: var(--size-extraTiny);
+      }
+      ._extraTinyRight_koft3_19 {
+        padding-right: var(--size-extraTiny);
+      }
+      ._extraTinyBottom_koft3_23 {
+        padding-bottom: var(--size-extraTiny);
+      }
+      ._extraTinyLeft_koft3_27 {
+        padding-left: var(--size-extraTiny);
+      }
+      ._tiny_koft3_31 {
+        padding: var(--size-tiny);
+      }
+      ._tinyVR_koft3_35 {
+        padding-top: var(--size-tiny);
+        padding-bottom: var(--size-tiny);
+      }
+      ._tinyHR_koft3_40 {
+        padding-left: var(--size-tiny);
+        padding-right: var(--size-tiny);
+      }
+      ._tinyTop_koft3_45 {
+        padding-top: var(--size-tiny);
+      }
+      ._tinyRight_koft3_49 {
+        padding-right: var(--size-tiny);
+      }
+      ._tinyBottom_koft3_53 {
+        padding-bottom: var(--size-tiny);
+      }
+      ._tinyLeft_koft3_57 {
+        padding-left: var(--size-tiny);
+      }
+      ._extraSmall_koft3_61 {
+        padding: var(--size-extraSmall);
+      }
+      ._extraSmallVR_koft3_65 {
+        padding-top: var(--size-extraSmall);
+        padding-bottom: var(--size-extraSmall);
+      }
+      ._extraSmallHR_koft3_70 {
+        padding-left: var(--size-extraSmall);
+        padding-right: var(--size-extraSmall);
+      }
+      ._extraSmallTop_koft3_75 {
+        padding-top: var(--size-extraSmall);
+      }
+      ._extraSmallRight_koft3_79 {
+        padding-right: var(--size-extraSmall);
+      }
+      ._extraSmallBottom_koft3_83 {
+        padding-bottom: var(--size-extraSmall);
+      }
+      ._extraSmallLeft_koft3_87 {
+        padding-left: var(--size-extraSmall);
+      }
+      ._small_koft3_91 {
+        padding: var(--size-small);
+      }
+      ._smallVR_koft3_95 {
+        padding-top: var(--size-small);
+        padding-bottom: var(--size-small);
+      }
+      ._smallHR_koft3_100 {
+        padding-left: var(--size-small);
+        padding-right: var(--size-small);
+      }
+      ._smallTop_koft3_105 {
+        padding-top: var(--size-small);
+      }
+      ._smallRight_koft3_109 {
+        padding-right: var(--size-small);
+      }
+      ._smallBottom_koft3_113 {
+        padding-bottom: var(--size-small);
+      }
+      ._smallLeft_koft3_117 {
+        padding-left: var(--size-small);
+      }
+      ._medium_koft3_121 {
+        padding: var(--size-medium);
+      }
+      ._mediumVR_koft3_125 {
+        padding-top: var(--size-medium);
+        padding-bottom: var(--size-medium);
+      }
+      ._mediumHR_koft3_130 {
+        padding-left: var(--size-medium);
+        padding-right: var(--size-medium);
+      }
+      ._mediumTop_koft3_135 {
+        padding-top: var(--size-medium);
+      }
+      ._mediumRight_koft3_139 {
+        padding-right: var(--size-medium);
+      }
+      ._mediumBottom_koft3_143 {
+        padding-bottom: var(--size-medium);
+      }
+      ._mediumLeft_koft3_147 {
+        padding-left: var(--size-medium);
+      }
+      ._normal_koft3_151 {
+        padding: var(--size-normal);
+      }
+      ._normalVR_koft3_155 {
+        padding-top: var(--size-normal);
+        padding-bottom: var(--size-normal);
+      }
+      ._normalHR_koft3_160 {
+        padding-left: var(--size-normal);
+        padding-right: var(--size-normal);
+      }
+      ._normalTop_koft3_165 {
+        padding-top: var(--size-normal);
+      }
+      ._normalRight_koft3_169 {
+        padding-right: var(--size-normal);
+      }
+      ._normalBottom_koft3_173 {
+        padding-bottom: var(--size-normal);
+      }
+      ._normalLeft_koft3_177 {
+        padding-left: var(--size-normal);
+      }
+      ._large_koft3_181 {
+        padding: var(--size-large);
+      }
+      ._largeVR_koft3_185 {
+        padding-top: var(--size-large);
+        padding-bottom: var(--size-large);
+      }
+      ._largeHR_koft3_190 {
+        padding-left: var(--size-large);
+        padding-right: var(--size-large);
+      }
+      ._largeTop_koft3_195 {
+        padding-top: var(--size-large);
+      }
+      ._largeRight_koft3_199 {
+        padding-right: var(--size-large);
+      }
+      ._largeBottom_koft3_203 {
+        padding-bottom: var(--size-large);
+      }
+      ._largeLeft_koft3_207 {
+        padding-left: var(--size-large);
+      }
+      ._xLarge_koft3_211 {
+        padding: var(--size-xLarge);
+      }
+      ._xLargeVR_koft3_215 {
+        padding-top: var(--size-xLarge);
+        padding-bottom: var(--size-xLarge);
+      }
+      ._xLargeHR_koft3_220 {
+        padding-left: var(--size-xLarge);
+        padding-right: var(--size-xLarge);
+      }
+      ._xLargeTop_koft3_225 {
+        padding-top: var(--size-xLarge);
+      }
+      ._xLargeRight_koft3_229 {
+        padding-right: var(--size-xLarge);
+      }
+      ._xLargeBottom_koft3_233 {
+        padding-bottom: var(--size-xLarge);
+      }
+      ._xLargeLeft_koft3_237 {
+        padding-left: var(--size-xLarge);
+      }
+      ._xxLarge_koft3_241 {
+        padding: var(--size-xxLarge);
+      }
+      ._xxLargeVR_koft3_245 {
+        padding-top: var(--size-xxLarge);
+        padding-bottom: var(--size-xxLarge);
+      }
+      ._xxLargeHR_koft3_250 {
+        padding-left: var(--size-xxLarge);
+        padding-right: var(--size-xxLarge);
+      }
+      ._xxLargeTop_koft3_255 {
+        padding-top: var(--size-xxLarge);
+      }
+      ._xxLargeRight_koft3_259 {
+        padding-right: var(--size-xxLarge);
+      }
+      ._xxLargeBottom_koft3_263 {
+        padding-bottom: var(--size-xxLarge);
+      }
+      ._xxLargeLeft_koft3_267 {
+        padding-left: var(--size-xxLarge);
+      }
+      ._extraLarge_koft3_271 {
+        padding: var(--size-extraLarge);
+      }
+      ._extraLargeVR_koft3_275 {
+        padding-top: var(--size-extraLarge);
+        padding-bottom: var(--size-extraLarge);
+      }
+      ._extraLargeHR_koft3_280 {
+        padding-left: var(--size-extraLarge);
+        padding-right: var(--size-extraLarge);
+      }
+      ._extraLargeTop_koft3_285 {
+        padding-top: var(--size-extraLarge);
+      }
+      ._extraLargeRight_koft3_289 {
+        padding-right: var(--size-extraLarge);
+      }
+      ._extraLargeBottom_koft3_293 {
+        padding-bottom: var(--size-extraLarge);
+      }
+      ._extraLargeLeft_koft3_297 {
+        padding-left: var(--size-extraLarge);
+      }
+      ._button_8qcn6_1 {
+        border-radius: 1000px;
+        border: unset;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      ._button_8qcn6_1:hover {
+        box-shadow: 0 2px 8px #0000001a;
+      }
+      ._button_8qcn6_1:active {
+        box-shadow: 0 0 #0000001a;
+      }
+      ._button_8qcn6_1 ._svg_8qcn6_13 * {
+        transition: 0.3s;
+      }
+      ._button_8qcn6_1:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+      ._button_default_8qcn6_20 {
+        background: transparent;
+        color: var(--primary);
+      }
+      ._button_default_8qcn6_20:hover {
+        background: var(--grayscale-gs-background-darker);
+      }
+      ._button_default_8qcn6_20:active {
+        background: var(--grayscale-gs-quarterly-1);
+      }
+      ._button_default_8qcn6_20 ._svg_8qcn6_13 * {
+        fill: var(--primary);
+      }
+      ._button_defaultDark_8qcn6_33:hover {
+        background: var(--primary-light-dm);
+      }
+      ._button_defaultDark_8qcn6_33:active {
+        background: var(--primary-light-bg-dm);
+      }
+      ._button_defaultDark_8qcn6_33 ._svg_8qcn6_13 * {
+        fill: var(--primary);
+      }
+      ._button_primary_8qcn6_42 {
+        background: var(--grayscale-bg-darker);
+        color: var(--grayscale-secondary1);
+      }
+      ._button_primary_8qcn6_42:hover {
+        background: var(--primary-light-bg);
+        color: var(--primary);
+      }
+      ._button_primary_8qcn6_42:hover svg * {
+        fill: var(--primary);
+      }
+      ._button_primary_8qcn6_42:active {
+        background: var(--primary-light);
+      }
+      ._button_primary_8qcn6_42 ._svg_8qcn6_13 * {
+        fill: var(--grayscale-secondary1);
+      }
+      ._button_primaryDark_8qcn6_59 {
+        background: var(--tg-background-2);
+        color: var(--tg-secondary);
+      }
+      ._button_primaryDark_8qcn6_59:hover {
+        background: var(--primary-light-dm);
+        color: var(--primary);
+      }
+      ._button_primaryDark_8qcn6_59:hover svg * {
+        fill: var(--primary);
+      }
+      ._button_primaryDark_8qcn6_59:active {
+        background: var(--primary-light-bg-dm);
+      }
+      ._button_primaryDark_8qcn6_59 ._svg_8qcn6_13 * {
+        fill: var(--tg-secondary);
+      }
+      ._button_warning_8qcn6_76 {
+        background: var(--error-light);
+        color: var(--error);
+      }
+      ._button_warning_8qcn6_76:hover {
+        background: var(--error-light-hover);
+      }
+      ._button_warning_8qcn6_76:active {
+        background: var(--error-light-pressed);
+      }
+      ._button_warning_8qcn6_76 ._svg_8qcn6_13 * {
+        fill: var(--error);
+      }
+      ._button_warningDark_8qcn6_89 {
+        background: var(--error-light-dm);
+        color: var(--error);
+      }
+      ._button_warningDark_8qcn6_89:hover {
+        background: var(--error-light-dm-hover);
+      }
+      ._button_warningDark_8qcn6_89:active {
+        background: var(--error-light-dm-pressed);
+      }
+      ._button_warningDark_8qcn6_89 ._svg_8qcn6_13 * {
+        fill: var(--error);
+      }
+      ._button_link_8qcn6_102 {
+        background: transparent;
+        color: var(--primary);
+      }
+      ._button_link_8qcn6_102:hover {
+        color: var(--primary-hover);
+      }
+      ._button_link_8qcn6_102:active {
+        color: var(--primary-pressed);
+      }
+      ._button_link_8qcn6_102 ._svg_8qcn6_13 * {
+        fill: var(--primary);
+      }
+      ._button_link_8qcn6_102 ._svg_8qcn6_13 *:hover {
+        fill: var(--primary-hover);
+      }
+      ._button_link_8qcn6_102 ._svg_8qcn6_13 *:active {
+        fill: var(--primary-pressed);
+      }
+      ._button_large_8qcn6_121 {
+        padding: calc(var(--size-medium) - var(--size-tiny)) var(--size-medium);
+      }
+      ._button_large_8qcn6_121 * {
+        font-size: var(--font-size-small);
+      }
+      ._button_medium_8qcn6_127 {
+        padding: 0 var(--size-medium);
+        min-height: 28px;
+      }
+      ._button_medium_8qcn6_127 * {
+        font-size: var(--font-size-small);
+      }
+      ._button_small_8qcn6_134 {
+        padding: 0;
+        height: 28px;
+        width: 28px;
+      }
+      ._button_small_8qcn6_134 * {
+        font-size: var(--font-size-tiny);
+      }
+      ._flexBox_15diu_1 {
+        flex-flow: unset;
+      }
+      ._gap_extraTiny_15diu_5 {
+        gap: var(--size-extraTiny);
+      }
+      ._gap_tiny_15diu_9 {
+        gap: var(--size-tiny);
+      }
+      ._gap_extraSmall_15diu_13 {
+        gap: var(--size-extraSmall);
+      }
+      ._gap_small_15diu_17 {
+        gap: var(--size-small);
+      }
+      ._gap_medium_15diu_21 {
+        gap: var(--size-medium);
+      }
+      ._gap_normal_15diu_25 {
+        gap: var(--size-normal);
+      }
+      ._gap_large_15diu_29 {
+        gap: var(--size-large);
+      }
+      ._gap_xLarge_15diu_33 {
+        gap: var(--size-xLarge);
+      }
+      ._gap_xxLarge_15diu_37 {
+        gap: var(--size-xxLarge);
+      }
+      ._gap_extraLarge_15diu_41 {
+        gap: var(--size-extraLarge);
+      }
+      ._column_15diu_45 {
+        flex-direction: column !important;
+      }
+      ._flexWrap_15diu_49 {
+        flex-wrap: wrap;
+      }
+      ._size_tiny_1eraq_1,
+      ._size_tiny_1eraq_1 * {
+        font-size: var(--font-size-tiny);
+      }
+      ._size_small_1eraq_5,
+      ._size_small_1eraq_5 * {
+        font-size: var(--font-size-small);
+      }
+      ._size_medium_1eraq_9,
+      ._size_medium_1eraq_9 * {
+        font-size: var(--font-size-medium);
+      }
+      ._size_large_1eraq_13,
+      ._size_large_1eraq_13 * {
+        font-size: var(--font-size-large);
+      }
+      ._weight_thin_1eraq_17,
+      ._weight_thin_1eraq_17 * {
+        font-weight: var(--weight-thin);
+      }
+      ._weight_extraLight_1eraq_21,
+      ._weight_extraLight_1eraq_21 * {
+        font-weight: var(--weight-extraLight);
+      }
+      ._weight_light_1eraq_25,
+      ._weight_light_1eraq_25 * {
+        font-weight: var(--weight-light);
+      }
+      ._weight_normal_1eraq_29,
+      ._weight_normal_1eraq_29 * {
+        font-weight: var(--weight-normal);
+      }
+      ._weight_medium_1eraq_33,
+      ._weight_medium_1eraq_33 * {
+        font-weight: var(--weight-medium);
+      }
+      ._weight_semiBold_1eraq_37,
+      ._weight_semiBold_1eraq_37 * {
+        font-weight: var(--weight-semiBold);
+      }
+      ._weight_bold_1eraq_41,
+      ._weight_bold_1eraq_41 * {
+        font-weight: var(--weight-bold);
+      }
+      ._weight_extraBold_1eraq_45,
+      ._weight_extraBold_1eraq_45 * {
+        font-weight: var(--weight-extraBold);
+      }
+      ._lineHeight_1eraq_49 {
+        line-height: 100%;
+      }
+      ._secondary_1eraq_53 {
+        color: var(--tg-secondary);
+      }
+      ._center_1eraq_57 {
+        text-align: center;
+      }
+      ._container_1qwtu_1 {
+        border-radius: 8px;
+        padding: 2px;
+        transition: 0.3s;
+      }
+      ._container_1qwtu_1:hover {
+        background: var(--primary-light-bg);
+      }
+      ._container_1qwtu_1:hover ._byteSize_1qwtu_9 {
+        color: var(--primary);
+      }
+      ._container_1qwtu_1:active {
+        background: var(--primary-light);
+      }
+      ._containerDark_1qwtu_15:hover {
+        background: var(--primary-light-bg-dm);
+      }
+      ._containerDark_1qwtu_15:active {
+        background: var(--primary-light-dm);
+      }
+      ._container_1qwtu_1 ._controlButtons_1qwtu_21 {
+        transition: 0.3s;
+        opacity: 1;
+      }
+      ._container_1qwtu_1 ._controlButtonsHiden_1qwtu_25 {
+        pointer-events: none;
+        opacity: 0;
+      }
+      ._container_1qwtu_1 ._filename_1qwtu_29 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 180px;
+      }
+      ._modal_dmca9_1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ._modal_dmca9_1 ._window_dmca9_11 {
+        width: 100%;
+        height: 100%;
+        background: var(--white);
+        z-index: 1;
+        position: relative;
+        opacity: 0;
+        transform: scale(0.01);
+        transition: 0.3s;
+      }
+      ._modal_dmca9_1 ._windowDark_dmca9_21 {
+        background: var(--tg-background);
+      }
+      ._modal_dmca9_1 ._window_dmca9_11 ._close_dmca9_24 {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+      ._modal_visible_dmca9_30 ._window_dmca9_11 {
+        opacity: 1;
+        transform: scale(1);
+      }
+      ._modal_hidden_dmca9_34 ._window_dmca9_11,
+      ._modal_hiddenDone_dmca9_38 ._window_dmca9_11 {
+        opacity: 0;
+        transform: scale(0.01);
+      }
+      ._container_1orsp_1 {
+        cursor: pointer;
+        border-radius: 8px;
+        background: var(--primary-light-bg);
+        padding: 4px;
+        transition: 0.3s;
+      }
+      ._container_1orsp_1:hover {
+        box-shadow: 0 2px 8px #0000001a;
+        color: var(--primary);
+      }
+      ._container_1orsp_1:active {
+        background: var(--primary-light);
+        box-shadow: 0 0 #0000001a;
+      }
+      ._containerDark_1orsp_16 {
+        background: var(--primary-light-bg-dm);
+      }
+      ._containerDark_1orsp_16:hover {
+        box-shadow: 0 2px 8px #0000004d;
+        background: var(--primary-light-dm);
+        color: var(--primary);
+      }
+      ._containerDark_1orsp_16:active {
+        background: var(--primary-light-bg-dm);
+        box-shadow: 0 0 #0000001a;
+      }
+      ._background_1sn37_1 {
+        fill: var(--white);
+        transition: 0.3s;
+      }
+      ._backgroundDark_1sn37_5 {
+        fill: var(--tg-background);
+        transition: 0.3s;
+      }
+      ._header_1sn37_10 {
+        fill: var(--secondary);
+        transition: 0.3s;
+      }
+      ._headerDark_1sn37_14 {
+        fill: var(--secondary-dm);
+        transition: 0.3s;
+      }
+      ._toggleContainer_zpgmu_1 {
+        border-radius: 8px;
+        min-width: 150px;
+        position: relative;
+        transition: 0.3s;
+      }
+      ._toggleContainer_zpgmu_1:hover {
+        background: var(--primary-light-bg);
+      }
+      ._toggleContainer_zpgmu_1:hover ._textContainer_zpgmu_10 {
+        color: var(--primary);
+      }
+      ._toggleContainer_zpgmu_1:active {
+        background: var(--primary-light);
+      }
+      ._toggleContainerDark_zpgmu_16 {
+        color: var(--white);
+      }
+      ._toggleContainerDark_zpgmu_16:hover {
+        background: var(--primary-light-dm);
+      }
+      ._toggleContainerDark_zpgmu_16:hover ._textContainer_zpgmu_10 {
+        color: var(--primary);
+      }
+      ._toggleContainerDark_zpgmu_16:active {
+        background: var(--primary-light-bg-dm);
+      }
+      ._toggleContainer_zpgmu_1 ._textContainer_zpgmu_10 {
+        max-width: 200px;
+        height: 17px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        transition: 0.3s;
+        font-size: var(--font-size-small);
+      }
+      ._toggleContainer_zpgmu_1 ._textContainerDisabled_zpgmu_37 {
+        color: var(--grayscale-secondary1);
+        cursor: default;
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainer_zpgmu_41 {
+        width: 40px;
+        height: 24px;
+        border-radius: 1000px;
+        cursor: pointer;
+        position: relative;
+        transition: 0.3s;
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainerChecked_zpgmu_49 {
+        background: var(--primary);
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainerUnChecked_zpgmu_52 {
+        background: var(--grayscale-tetriary2);
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainerUnCheckedDark_zpgmu_55 {
+        background: var(--tg-stroke);
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainerDisabled_zpgmu_58 {
+        background: var(--grayscale-secondary1);
+        cursor: not-allowed;
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainer_zpgmu_41 ._circle_zpgmu_62 {
+        width: 20px;
+        height: 20px;
+        border-radius: 1000px;
+        position: absolute;
+        background: var(--white);
+        top: 2px;
+        transition: 0.3s;
+      }
+      ._toggleContainer_zpgmu_1
+        ._buttonContainer_zpgmu_41
+        ._circleChecked_zpgmu_71 {
+        left: 18px;
+      }
+      ._toggleContainer_zpgmu_1
+        ._buttonContainer_zpgmu_41
+        ._circleUnChecked_zpgmu_74 {
+        left: 2px;
+      }
+      ._toggleContainer_zpgmu_1
+        ._buttonContainer_zpgmu_41
+        input[type="checkbox"] {
+        display: none;
+      }
+      ._message_zpgmu_81 {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        transition: 0.3s;
+        top: -18px;
+        left: 0;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: var(--font-size-tiny);
+        cursor: default;
+      }
+      ._message_visible_zpgmu_95 {
+        opacity: 1;
+      }
+      ._message_hidden_zpgmu_98 {
+        opacity: 0;
+      }
+      ._snackbar_8n58j_1 {
+        border-radius: 8px;
+        background: var(--success-light-bg);
+        color: var(--success);
+        box-shadow: 0 1px 8px #0000001a;
+        padding: 8px;
+        z-index: 2147483647;
+        position: fixed;
+        bottom: -100px;
+        right: 16px;
+        transition: 0.3s;
+        width: 368px;
+      }
+      ._snackbar_8n58j_1 svg * {
+        fill: var(--success);
+      }
+      ._snackbarDark_8n58j_17 {
+        background: var(--success-light-bg-dm);
+        color: var(--success);
+      }
+      ._snackbarVisible_8n58j_21 {
+        bottom: 8px;
+      }
+      ._snackbarHidden_8n58j_24 {
+        bottom: -100px;
+      }
+    </style>
+    <link
+      rel="preload"
+      href="/_next/static/media/gyByhwUxId8gMEwcGFWNOITd-s.p.da1ebef7.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      href="/_next/static/media/or3nQ6H_1_WfwkMZI_qYFrcdmhHkjko-s.p.be19f591.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <style>
+      ._container_19rae_1 {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100%;
+        width: 400px;
+        transition: 0.3s;
+        box-shadow: 0 0 16px #0000001f;
+        z-index: 2147483647;
+      }
+      ._container_visible_19rae_11 {
+        right: 0;
+      }
+      :root {
+        --primary: #009af7;
+        --primary-light: #e5f5fe;
+        --primary-light-bg: #f2faff;
+        --primary-light-bg-dm: #192837;
+        --primary-light-dm: #153a55;
+        --primary-hover: #3398ff;
+        --primary-pressed: #66b2ff;
+        --secondary: #66c2fa;
+        --secondary-dm: #0a6aa6;
+        --tg-background: #1a222d;
+        --tg-background-2: #242f3e;
+        --tg-stroke: #3b4655;
+        --success: #00b872;
+        --success-light-bg: #f2fbf8;
+        --success-light-bg-dm: #192a30;
+        --error: #ff2749;
+        --error-light: #fff4f6;
+        --error-light-hover: #ffdfe5;
+        --error-light-pressed: #ffcbd3;
+        --error-light-dm: #482333;
+        --error-light-dm-hover: #5a2335;
+        --error-light-dm-pressed: #6d2437;
+        --grayscale-secondary1: #68687b;
+        --grayscale-bg-darker: #f3f4f7;
+        --tg-secondary: #c1c3c7;
+        --grayscale-tetriary2: #d0d0d7;
+        --black: #111111;
+        --white: #ffffff;
+        --primary2: #43434e;
+        --grayscale-gs-background-darker: #f3f4f7;
+        --grayscale-gs-quarterly-1: #dfdfe4;
+        --bacground: #f5f5f5;
+        --bacground-dark: #282828;
+      }
+      :root {
+        --size-extraTiny: 2px;
+        --size-tiny: 4px;
+        --size-extraSmall: 6px;
+        --size-small: 8px;
+        --size-medium: 12px;
+        --size-normal: 24px;
+        --size-large: 32px;
+        --size-xLarge: 48px;
+        --size-xxLarge: 56px;
+        --size-extraLarge: 64px;
+        --font-size-tiny: 12px;
+        --font-size-small: 16px;
+        --font-size-medium: 18px;
+        --font-size-large: 32px;
+        --weight-thin: 100;
+        --weight-extraLight: 200;
+        --weight-light: 300;
+        --weight-normal: 400;
+        --weight-medium: 500;
+        --weight-semiBold: 600;
+        --weight-bold: 700;
+        --weight-extraBold: 800;
+      }
+      ._popupContainer_1l893_1 {
+        background: var(--white);
+        width: 100%;
+        height: 100vh;
+        transition: 0.3s;
+      }
+      ._popupContainer_1l893_1 *,
+      ._popupContainer_1l893_1 + * {
+        color: var(--black);
+      }
+      ._popupContainerDark_1l893_10 {
+        background: var(--tg-background);
+        color: var(--white);
+      }
+      ._popupContainerDark_1l893_10 *,
+      ._popupContainerDark_1l893_10 + * {
+        color: var(--white);
+      }
+      ._header_qd86s_1 {
+        box-shadow: 0 1px 8px #0000001a;
+      }
+      ._headerDark_qd86s_4 {
+        box-shadow: 0 1px 8px #00000080;
+      }
+      ._extraTiny_koft3_1 {
+        padding: var(--size-extraTiny);
+      }
+      ._extraTinyVR_koft3_5 {
+        padding-top: var(--size-extraTiny);
+        padding-bottom: var(--size-extraTiny);
+      }
+      ._extraTinyHR_koft3_10 {
+        padding-left: var(--size-extraTiny);
+        padding-right: var(--size-extraTiny);
+      }
+      ._extraTinyTop_koft3_15 {
+        padding-top: var(--size-extraTiny);
+      }
+      ._extraTinyRight_koft3_19 {
+        padding-right: var(--size-extraTiny);
+      }
+      ._extraTinyBottom_koft3_23 {
+        padding-bottom: var(--size-extraTiny);
+      }
+      ._extraTinyLeft_koft3_27 {
+        padding-left: var(--size-extraTiny);
+      }
+      ._tiny_koft3_31 {
+        padding: var(--size-tiny);
+      }
+      ._tinyVR_koft3_35 {
+        padding-top: var(--size-tiny);
+        padding-bottom: var(--size-tiny);
+      }
+      ._tinyHR_koft3_40 {
+        padding-left: var(--size-tiny);
+        padding-right: var(--size-tiny);
+      }
+      ._tinyTop_koft3_45 {
+        padding-top: var(--size-tiny);
+      }
+      ._tinyRight_koft3_49 {
+        padding-right: var(--size-tiny);
+      }
+      ._tinyBottom_koft3_53 {
+        padding-bottom: var(--size-tiny);
+      }
+      ._tinyLeft_koft3_57 {
+        padding-left: var(--size-tiny);
+      }
+      ._extraSmall_koft3_61 {
+        padding: var(--size-extraSmall);
+      }
+      ._extraSmallVR_koft3_65 {
+        padding-top: var(--size-extraSmall);
+        padding-bottom: var(--size-extraSmall);
+      }
+      ._extraSmallHR_koft3_70 {
+        padding-left: var(--size-extraSmall);
+        padding-right: var(--size-extraSmall);
+      }
+      ._extraSmallTop_koft3_75 {
+        padding-top: var(--size-extraSmall);
+      }
+      ._extraSmallRight_koft3_79 {
+        padding-right: var(--size-extraSmall);
+      }
+      ._extraSmallBottom_koft3_83 {
+        padding-bottom: var(--size-extraSmall);
+      }
+      ._extraSmallLeft_koft3_87 {
+        padding-left: var(--size-extraSmall);
+      }
+      ._small_koft3_91 {
+        padding: var(--size-small);
+      }
+      ._smallVR_koft3_95 {
+        padding-top: var(--size-small);
+        padding-bottom: var(--size-small);
+      }
+      ._smallHR_koft3_100 {
+        padding-left: var(--size-small);
+        padding-right: var(--size-small);
+      }
+      ._smallTop_koft3_105 {
+        padding-top: var(--size-small);
+      }
+      ._smallRight_koft3_109 {
+        padding-right: var(--size-small);
+      }
+      ._smallBottom_koft3_113 {
+        padding-bottom: var(--size-small);
+      }
+      ._smallLeft_koft3_117 {
+        padding-left: var(--size-small);
+      }
+      ._medium_koft3_121 {
+        padding: var(--size-medium);
+      }
+      ._mediumVR_koft3_125 {
+        padding-top: var(--size-medium);
+        padding-bottom: var(--size-medium);
+      }
+      ._mediumHR_koft3_130 {
+        padding-left: var(--size-medium);
+        padding-right: var(--size-medium);
+      }
+      ._mediumTop_koft3_135 {
+        padding-top: var(--size-medium);
+      }
+      ._mediumRight_koft3_139 {
+        padding-right: var(--size-medium);
+      }
+      ._mediumBottom_koft3_143 {
+        padding-bottom: var(--size-medium);
+      }
+      ._mediumLeft_koft3_147 {
+        padding-left: var(--size-medium);
+      }
+      ._normal_koft3_151 {
+        padding: var(--size-normal);
+      }
+      ._normalVR_koft3_155 {
+        padding-top: var(--size-normal);
+        padding-bottom: var(--size-normal);
+      }
+      ._normalHR_koft3_160 {
+        padding-left: var(--size-normal);
+        padding-right: var(--size-normal);
+      }
+      ._normalTop_koft3_165 {
+        padding-top: var(--size-normal);
+      }
+      ._normalRight_koft3_169 {
+        padding-right: var(--size-normal);
+      }
+      ._normalBottom_koft3_173 {
+        padding-bottom: var(--size-normal);
+      }
+      ._normalLeft_koft3_177 {
+        padding-left: var(--size-normal);
+      }
+      ._large_koft3_181 {
+        padding: var(--size-large);
+      }
+      ._largeVR_koft3_185 {
+        padding-top: var(--size-large);
+        padding-bottom: var(--size-large);
+      }
+      ._largeHR_koft3_190 {
+        padding-left: var(--size-large);
+        padding-right: var(--size-large);
+      }
+      ._largeTop_koft3_195 {
+        padding-top: var(--size-large);
+      }
+      ._largeRight_koft3_199 {
+        padding-right: var(--size-large);
+      }
+      ._largeBottom_koft3_203 {
+        padding-bottom: var(--size-large);
+      }
+      ._largeLeft_koft3_207 {
+        padding-left: var(--size-large);
+      }
+      ._xLarge_koft3_211 {
+        padding: var(--size-xLarge);
+      }
+      ._xLargeVR_koft3_215 {
+        padding-top: var(--size-xLarge);
+        padding-bottom: var(--size-xLarge);
+      }
+      ._xLargeHR_koft3_220 {
+        padding-left: var(--size-xLarge);
+        padding-right: var(--size-xLarge);
+      }
+      ._xLargeTop_koft3_225 {
+        padding-top: var(--size-xLarge);
+      }
+      ._xLargeRight_koft3_229 {
+        padding-right: var(--size-xLarge);
+      }
+      ._xLargeBottom_koft3_233 {
+        padding-bottom: var(--size-xLarge);
+      }
+      ._xLargeLeft_koft3_237 {
+        padding-left: var(--size-xLarge);
+      }
+      ._xxLarge_koft3_241 {
+        padding: var(--size-xxLarge);
+      }
+      ._xxLargeVR_koft3_245 {
+        padding-top: var(--size-xxLarge);
+        padding-bottom: var(--size-xxLarge);
+      }
+      ._xxLargeHR_koft3_250 {
+        padding-left: var(--size-xxLarge);
+        padding-right: var(--size-xxLarge);
+      }
+      ._xxLargeTop_koft3_255 {
+        padding-top: var(--size-xxLarge);
+      }
+      ._xxLargeRight_koft3_259 {
+        padding-right: var(--size-xxLarge);
+      }
+      ._xxLargeBottom_koft3_263 {
+        padding-bottom: var(--size-xxLarge);
+      }
+      ._xxLargeLeft_koft3_267 {
+        padding-left: var(--size-xxLarge);
+      }
+      ._extraLarge_koft3_271 {
+        padding: var(--size-extraLarge);
+      }
+      ._extraLargeVR_koft3_275 {
+        padding-top: var(--size-extraLarge);
+        padding-bottom: var(--size-extraLarge);
+      }
+      ._extraLargeHR_koft3_280 {
+        padding-left: var(--size-extraLarge);
+        padding-right: var(--size-extraLarge);
+      }
+      ._extraLargeTop_koft3_285 {
+        padding-top: var(--size-extraLarge);
+      }
+      ._extraLargeRight_koft3_289 {
+        padding-right: var(--size-extraLarge);
+      }
+      ._extraLargeBottom_koft3_293 {
+        padding-bottom: var(--size-extraLarge);
+      }
+      ._extraLargeLeft_koft3_297 {
+        padding-left: var(--size-extraLarge);
+      }
+      ._button_8qcn6_1 {
+        border-radius: 1000px;
+        border: unset;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      ._button_8qcn6_1:hover {
+        box-shadow: 0 2px 8px #0000001a;
+      }
+      ._button_8qcn6_1:active {
+        box-shadow: 0 0 #0000001a;
+      }
+      ._button_8qcn6_1 ._svg_8qcn6_13 * {
+        transition: 0.3s;
+      }
+      ._button_8qcn6_1:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+      ._button_default_8qcn6_20 {
+        background: transparent;
+        color: var(--primary);
+      }
+      ._button_default_8qcn6_20:hover {
+        background: var(--grayscale-gs-background-darker);
+      }
+      ._button_default_8qcn6_20:active {
+        background: var(--grayscale-gs-quarterly-1);
+      }
+      ._button_default_8qcn6_20 ._svg_8qcn6_13 * {
+        fill: var(--primary);
+      }
+      ._button_defaultDark_8qcn6_33:hover {
+        background: var(--primary-light-dm);
+      }
+      ._button_defaultDark_8qcn6_33:active {
+        background: var(--primary-light-bg-dm);
+      }
+      ._button_defaultDark_8qcn6_33 ._svg_8qcn6_13 * {
+        fill: var(--primary);
+      }
+      ._button_primary_8qcn6_42 {
+        background: var(--grayscale-bg-darker);
+        color: var(--grayscale-secondary1);
+      }
+      ._button_primary_8qcn6_42:hover {
+        background: var(--primary-light-bg);
+        color: var(--primary);
+      }
+      ._button_primary_8qcn6_42:hover svg * {
+        fill: var(--primary);
+      }
+      ._button_primary_8qcn6_42:active {
+        background: var(--primary-light);
+      }
+      ._button_primary_8qcn6_42 ._svg_8qcn6_13 * {
+        fill: var(--grayscale-secondary1);
+      }
+      ._button_primaryDark_8qcn6_59 {
+        background: var(--tg-background-2);
+        color: var(--tg-secondary);
+      }
+      ._button_primaryDark_8qcn6_59:hover {
+        background: var(--primary-light-dm);
+        color: var(--primary);
+      }
+      ._button_primaryDark_8qcn6_59:hover svg * {
+        fill: var(--primary);
+      }
+      ._button_primaryDark_8qcn6_59:active {
+        background: var(--primary-light-bg-dm);
+      }
+      ._button_primaryDark_8qcn6_59 ._svg_8qcn6_13 * {
+        fill: var(--tg-secondary);
+      }
+      ._button_warning_8qcn6_76 {
+        background: var(--error-light);
+        color: var(--error);
+      }
+      ._button_warning_8qcn6_76:hover {
+        background: var(--error-light-hover);
+      }
+      ._button_warning_8qcn6_76:active {
+        background: var(--error-light-pressed);
+      }
+      ._button_warning_8qcn6_76 ._svg_8qcn6_13 * {
+        fill: var(--error);
+      }
+      ._button_warningDark_8qcn6_89 {
+        background: var(--error-light-dm);
+        color: var(--error);
+      }
+      ._button_warningDark_8qcn6_89:hover {
+        background: var(--error-light-dm-hover);
+      }
+      ._button_warningDark_8qcn6_89:active {
+        background: var(--error-light-dm-pressed);
+      }
+      ._button_warningDark_8qcn6_89 ._svg_8qcn6_13 * {
+        fill: var(--error);
+      }
+      ._button_link_8qcn6_102 {
+        background: transparent;
+        color: var(--primary);
+      }
+      ._button_link_8qcn6_102:hover {
+        color: var(--primary-hover);
+      }
+      ._button_link_8qcn6_102:active {
+        color: var(--primary-pressed);
+      }
+      ._button_link_8qcn6_102 ._svg_8qcn6_13 * {
+        fill: var(--primary);
+      }
+      ._button_link_8qcn6_102 ._svg_8qcn6_13 *:hover {
+        fill: var(--primary-hover);
+      }
+      ._button_link_8qcn6_102 ._svg_8qcn6_13 *:active {
+        fill: var(--primary-pressed);
+      }
+      ._button_large_8qcn6_121 {
+        padding: calc(var(--size-medium) - var(--size-tiny)) var(--size-medium);
+      }
+      ._button_large_8qcn6_121 * {
+        font-size: var(--font-size-small);
+      }
+      ._button_medium_8qcn6_127 {
+        padding: 0 var(--size-medium);
+        min-height: 28px;
+      }
+      ._button_medium_8qcn6_127 * {
+        font-size: var(--font-size-small);
+      }
+      ._button_small_8qcn6_134 {
+        padding: 0;
+        height: 28px;
+        width: 28px;
+      }
+      ._button_small_8qcn6_134 * {
+        font-size: var(--font-size-tiny);
+      }
+      ._flexBox_15diu_1 {
+        flex-flow: unset;
+      }
+      ._gap_extraTiny_15diu_5 {
+        gap: var(--size-extraTiny);
+      }
+      ._gap_tiny_15diu_9 {
+        gap: var(--size-tiny);
+      }
+      ._gap_extraSmall_15diu_13 {
+        gap: var(--size-extraSmall);
+      }
+      ._gap_small_15diu_17 {
+        gap: var(--size-small);
+      }
+      ._gap_medium_15diu_21 {
+        gap: var(--size-medium);
+      }
+      ._gap_normal_15diu_25 {
+        gap: var(--size-normal);
+      }
+      ._gap_large_15diu_29 {
+        gap: var(--size-large);
+      }
+      ._gap_xLarge_15diu_33 {
+        gap: var(--size-xLarge);
+      }
+      ._gap_xxLarge_15diu_37 {
+        gap: var(--size-xxLarge);
+      }
+      ._gap_extraLarge_15diu_41 {
+        gap: var(--size-extraLarge);
+      }
+      ._column_15diu_45 {
+        flex-direction: column !important;
+      }
+      ._flexWrap_15diu_49 {
+        flex-wrap: wrap;
+      }
+      ._size_tiny_1eraq_1,
+      ._size_tiny_1eraq_1 * {
+        font-size: var(--font-size-tiny);
+      }
+      ._size_small_1eraq_5,
+      ._size_small_1eraq_5 * {
+        font-size: var(--font-size-small);
+      }
+      ._size_medium_1eraq_9,
+      ._size_medium_1eraq_9 * {
+        font-size: var(--font-size-medium);
+      }
+      ._size_large_1eraq_13,
+      ._size_large_1eraq_13 * {
+        font-size: var(--font-size-large);
+      }
+      ._weight_thin_1eraq_17,
+      ._weight_thin_1eraq_17 * {
+        font-weight: var(--weight-thin);
+      }
+      ._weight_extraLight_1eraq_21,
+      ._weight_extraLight_1eraq_21 * {
+        font-weight: var(--weight-extraLight);
+      }
+      ._weight_light_1eraq_25,
+      ._weight_light_1eraq_25 * {
+        font-weight: var(--weight-light);
+      }
+      ._weight_normal_1eraq_29,
+      ._weight_normal_1eraq_29 * {
+        font-weight: var(--weight-normal);
+      }
+      ._weight_medium_1eraq_33,
+      ._weight_medium_1eraq_33 * {
+        font-weight: var(--weight-medium);
+      }
+      ._weight_semiBold_1eraq_37,
+      ._weight_semiBold_1eraq_37 * {
+        font-weight: var(--weight-semiBold);
+      }
+      ._weight_bold_1eraq_41,
+      ._weight_bold_1eraq_41 * {
+        font-weight: var(--weight-bold);
+      }
+      ._weight_extraBold_1eraq_45,
+      ._weight_extraBold_1eraq_45 * {
+        font-weight: var(--weight-extraBold);
+      }
+      ._lineHeight_1eraq_49 {
+        line-height: 100%;
+      }
+      ._secondary_1eraq_53 {
+        color: var(--tg-secondary);
+      }
+      ._center_1eraq_57 {
+        text-align: center;
+      }
+      ._container_1qwtu_1 {
+        border-radius: 8px;
+        padding: 2px;
+        transition: 0.3s;
+      }
+      ._container_1qwtu_1:hover {
+        background: var(--primary-light-bg);
+      }
+      ._container_1qwtu_1:hover ._byteSize_1qwtu_9 {
+        color: var(--primary);
+      }
+      ._container_1qwtu_1:active {
+        background: var(--primary-light);
+      }
+      ._containerDark_1qwtu_15:hover {
+        background: var(--primary-light-bg-dm);
+      }
+      ._containerDark_1qwtu_15:active {
+        background: var(--primary-light-dm);
+      }
+      ._container_1qwtu_1 ._controlButtons_1qwtu_21 {
+        transition: 0.3s;
+        opacity: 1;
+      }
+      ._container_1qwtu_1 ._controlButtonsHiden_1qwtu_25 {
+        pointer-events: none;
+        opacity: 0;
+      }
+      ._container_1qwtu_1 ._filename_1qwtu_29 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 180px;
+      }
+      ._modal_dmca9_1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      ._modal_dmca9_1 ._window_dmca9_11 {
+        width: 100%;
+        height: 100%;
+        background: var(--white);
+        z-index: 1;
+        position: relative;
+        opacity: 0;
+        transform: scale(0.01);
+        transition: 0.3s;
+      }
+      ._modal_dmca9_1 ._windowDark_dmca9_21 {
+        background: var(--tg-background);
+      }
+      ._modal_dmca9_1 ._window_dmca9_11 ._close_dmca9_24 {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+      ._modal_visible_dmca9_30 ._window_dmca9_11 {
+        opacity: 1;
+        transform: scale(1);
+      }
+      ._modal_hidden_dmca9_34 ._window_dmca9_11,
+      ._modal_hiddenDone_dmca9_38 ._window_dmca9_11 {
+        opacity: 0;
+        transform: scale(0.01);
+      }
+      ._container_1orsp_1 {
+        cursor: pointer;
+        border-radius: 8px;
+        background: var(--primary-light-bg);
+        padding: 4px;
+        transition: 0.3s;
+      }
+      ._container_1orsp_1:hover {
+        box-shadow: 0 2px 8px #0000001a;
+        color: var(--primary);
+      }
+      ._container_1orsp_1:active {
+        background: var(--primary-light);
+        box-shadow: 0 0 #0000001a;
+      }
+      ._containerDark_1orsp_16 {
+        background: var(--primary-light-bg-dm);
+      }
+      ._containerDark_1orsp_16:hover {
+        box-shadow: 0 2px 8px #0000004d;
+        background: var(--primary-light-dm);
+        color: var(--primary);
+      }
+      ._containerDark_1orsp_16:active {
+        background: var(--primary-light-bg-dm);
+        box-shadow: 0 0 #0000001a;
+      }
+      ._background_1sn37_1 {
+        fill: var(--white);
+        transition: 0.3s;
+      }
+      ._backgroundDark_1sn37_5 {
+        fill: var(--tg-background);
+        transition: 0.3s;
+      }
+      ._header_1sn37_10 {
+        fill: var(--secondary);
+        transition: 0.3s;
+      }
+      ._headerDark_1sn37_14 {
+        fill: var(--secondary-dm);
+        transition: 0.3s;
+      }
+      ._toggleContainer_zpgmu_1 {
+        border-radius: 8px;
+        min-width: 150px;
+        position: relative;
+        transition: 0.3s;
+      }
+      ._toggleContainer_zpgmu_1:hover {
+        background: var(--primary-light-bg);
+      }
+      ._toggleContainer_zpgmu_1:hover ._textContainer_zpgmu_10 {
+        color: var(--primary);
+      }
+      ._toggleContainer_zpgmu_1:active {
+        background: var(--primary-light);
+      }
+      ._toggleContainerDark_zpgmu_16 {
+        color: var(--white);
+      }
+      ._toggleContainerDark_zpgmu_16:hover {
+        background: var(--primary-light-dm);
+      }
+      ._toggleContainerDark_zpgmu_16:hover ._textContainer_zpgmu_10 {
+        color: var(--primary);
+      }
+      ._toggleContainerDark_zpgmu_16:active {
+        background: var(--primary-light-bg-dm);
+      }
+      ._toggleContainer_zpgmu_1 ._textContainer_zpgmu_10 {
+        max-width: 200px;
+        height: 17px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        transition: 0.3s;
+        font-size: var(--font-size-small);
+      }
+      ._toggleContainer_zpgmu_1 ._textContainerDisabled_zpgmu_37 {
+        color: var(--grayscale-secondary1);
+        cursor: default;
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainer_zpgmu_41 {
+        width: 40px;
+        height: 24px;
+        border-radius: 1000px;
+        cursor: pointer;
+        position: relative;
+        transition: 0.3s;
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainerChecked_zpgmu_49 {
+        background: var(--primary);
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainerUnChecked_zpgmu_52 {
+        background: var(--grayscale-tetriary2);
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainerUnCheckedDark_zpgmu_55 {
+        background: var(--tg-stroke);
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainerDisabled_zpgmu_58 {
+        background: var(--grayscale-secondary1);
+        cursor: not-allowed;
+      }
+      ._toggleContainer_zpgmu_1 ._buttonContainer_zpgmu_41 ._circle_zpgmu_62 {
+        width: 20px;
+        height: 20px;
+        border-radius: 1000px;
+        position: absolute;
+        background: var(--white);
+        top: 2px;
+        transition: 0.3s;
+      }
+      ._toggleContainer_zpgmu_1
+        ._buttonContainer_zpgmu_41
+        ._circleChecked_zpgmu_71 {
+        left: 18px;
+      }
+      ._toggleContainer_zpgmu_1
+        ._buttonContainer_zpgmu_41
+        ._circleUnChecked_zpgmu_74 {
+        left: 2px;
+      }
+      ._toggleContainer_zpgmu_1
+        ._buttonContainer_zpgmu_41
+        input[type="checkbox"] {
+        display: none;
+      }
+      ._message_zpgmu_81 {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        transition: 0.3s;
+        top: -18px;
+        left: 0;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: var(--font-size-tiny);
+        cursor: default;
+      }
+      ._message_visible_zpgmu_95 {
+        opacity: 1;
+      }
+      ._message_hidden_zpgmu_98 {
+        opacity: 0;
+      }
+      ._snackbar_8n58j_1 {
+        border-radius: 8px;
+        background: var(--success-light-bg);
+        color: var(--success);
+        box-shadow: 0 1px 8px #0000001a;
+        padding: 8px;
+        z-index: 2147483647;
+        position: fixed;
+        bottom: -100px;
+        right: 16px;
+        transition: 0.3s;
+        width: 368px;
+      }
+      ._snackbar_8n58j_1 svg * {
+        fill: var(--success);
+      }
+      ._snackbarDark_8n58j_17 {
+        background: var(--success-light-bg-dm);
+        color: var(--success);
+      }
+      ._snackbarVisible_8n58j_21 {
+        bottom: 8px;
+      }
+      ._snackbarHidden_8n58j_24 {
+        bottom: -100px;
+      }
+
+      /* From: http://localhost:3000/_next/static/chunks/%5Broot%20of%20the%20server%5D__8ebb6d._.css */
+      /* [next]/internal/font/google/geist_e531dabc.module.css [app-client] (css) */
+      @font-face {
+        font-family: Geist;
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../media/gyByhwUxId8gMEwSGFWNOITddY4-s.81df3a5b.woff2")
+          format("woff2");
+        unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF,
+          U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: Geist;
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../media/gyByhwUxId8gMEwcGFWNOITd-s.p.da1ebef7.woff2")
+          format("woff2");
+        unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC,
+          U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: Geist Fallback;
+        src: local(Arial);
+        ascent-override: 95.94%;
+        descent-override: 28.16%;
+        line-gap-override: 0%;
+        size-adjust: 104.76%;
+      }
+
+      .geist_e531dabc-module__QGiZLq__className {
+        font-family: Geist, Geist Fallback;
+        font-style: normal;
+      }
+
+      .geist_e531dabc-module__QGiZLq__variable {
+        --font-geist-sans: "Geist", "Geist Fallback";
+      }
+
+      /* [next]/internal/font/google/geist_mono_68a01160.module.css [app-client] (css) */
+      @font-face {
+        font-family: Geist Mono;
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../media/or3nQ6H_1_WfwkMZI_qYFrkdmhHkjkotbA-s.e32db976.woff2")
+          format("woff2");
+        unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF,
+          U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: Geist Mono;
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("../media/or3nQ6H_1_WfwkMZI_qYFrcdmhHkjko-s.p.be19f591.woff2")
+          format("woff2");
+        unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC,
+          U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: Geist Mono Fallback;
+        src: local(Arial);
+        ascent-override: 74.67%;
+        descent-override: 21.92%;
+        line-gap-override: 0%;
+        size-adjust: 134.59%;
+      }
+
+      .geist_mono_68a01160-module__YLcDdW__className {
+        font-family: Geist Mono, Geist Mono Fallback;
+        font-style: normal;
+      }
+
+      .geist_mono_68a01160-module__YLcDdW__variable {
+        --font-geist-mono: "Geist Mono", "Geist Mono Fallback";
+      }
+
+      /* [project]/src/app/globals.css [app-client] (css) */
+      *,
+      :before,
+      :after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: #3b82f680;
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+        --tw-contain-size: ;
+        --tw-contain-layout: ;
+        --tw-contain-paint: ;
+        --tw-contain-style: ;
+      }
+
+      ::backdrop {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: #3b82f680;
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+        --tw-contain-size: ;
+        --tw-contain-layout: ;
+        --tw-contain-paint: ;
+        --tw-contain-style: ;
+      }
+
+      *,
+      :before,
+      :after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb;
+      }
+
+      :before,
+      :after {
+        --tw-content: "";
+      }
+
+      html,
+      :host {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        tab-size: 4;
+        font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      body {
+        margin: 0;
+        line-height: inherit;
+      }
+
+      hr {
+        height: 0;
+        color: inherit;
+        border-top-width: 1px;
+      }
+
+      abbr:where([title]) {
+        text-decoration: underline dotted;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+
+      b,
+      strong {
+        font-weight: bolder;
+      }
+
+      code,
+      kbd,
+      samp,
+      pre {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          Liberation Mono, Courier New, monospace;
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+        font-size: 1em;
+      }
+
+      small {
+        font-size: 80%;
+      }
+
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+
+      sub {
+        bottom: -0.25em;
+      }
+
+      sup {
+        top: -0.5em;
+      }
+
+      table {
+        text-indent: 0;
+        border-color: inherit;
+        border-collapse: collapse;
+      }
+
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 100%;
+        font-weight: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+      }
+
+      button,
+      select {
+        text-transform: none;
+      }
+
+      button,
+      input:where([type="button"]),
+      input:where([type="reset"]),
+      input:where([type="submit"]) {
+        -webkit-appearance: button;
+        background-color: #0000;
+        background-image: none;
+      }
+
+      :-moz-focusring {
+        outline: auto;
+      }
+
+      :-moz-ui-invalid {
+        box-shadow: none;
+      }
+
+      progress {
+        vertical-align: baseline;
+      }
+
+      ::-webkit-inner-spin-button,
+      ::-webkit-outer-spin-button {
+        height: auto;
+      }
+
+      [type="search"] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+
+      ::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+
+      summary {
+        display: list-item;
+      }
+
+      blockquote,
+      dl,
+      dd,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      hr,
+      figure,
+      p,
+      pre {
+        margin: 0;
+      }
+
+      fieldset {
+        margin: 0;
+        padding: 0;
+      }
+
+      legend {
+        padding: 0;
+      }
+
+      ol,
+      ul,
+      menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      dialog {
+        padding: 0;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        opacity: 1;
+        color: #9ca3af;
+      }
+
+      button,
+      [role="button"] {
+        cursor: pointer;
+      }
+
+      :disabled {
+        cursor: default;
+      }
+
+      img,
+      svg,
+      video,
+      canvas,
+      audio,
+      iframe,
+      embed,
+      object {
+        display: block;
+        vertical-align: middle;
+      }
+
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+
+      [hidden]:where(:not([hidden="until-found"])) {
+        display: none;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .inset-0 {
+        inset: 0;
+      }
+
+      .z-10 {
+        z-index: 10;
+      }
+
+      .mb-1 {
+        margin-bottom: 0.25rem;
+      }
+
+      .mt-1 {
+        margin-top: 0.25rem;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .grid {
+        display: grid;
+      }
+
+      .h-12 {
+        height: 3rem;
+      }
+
+      .h-2 {
+        height: 0.5rem;
+      }
+
+      .h-3 {
+        height: 0.75rem;
+      }
+
+      .h-4 {
+        height: 1rem;
+      }
+
+      .h-full {
+        height: 100%;
+      }
+
+      .h-screen {
+        height: 100vh;
+      }
+
+      .min-h-screen {
+        min-height: 100vh;
+      }
+
+      .w-12 {
+        width: 3rem;
+      }
+
+      .w-2 {
+        width: 0.5rem;
+      }
+
+      .w-3 {
+        width: 0.75rem;
+      }
+
+      .w-4 {
+        width: 1rem;
+      }
+
+      .w-80 {
+        width: 20rem;
+      }
+
+      .w-full {
+        width: 100%;
+      }
+
+      .flex-1 {
+        flex: 1;
+      }
+
+      .transform {
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+          rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
+          skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+          scaleY(var(--tw-scale-y));
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .animate-spin {
+        animation: 1s linear infinite spin;
+      }
+
+      .cursor-not-allowed {
+        cursor: not-allowed;
+      }
+
+      .cursor-pointer {
+        cursor: pointer;
+      }
+
+      .grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .flex-row {
+        flex-direction: row;
+      }
+
+      .flex-col {
+        flex-direction: column;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .gap-2 {
+        gap: 0.5rem;
+      }
+
+      .gap-px {
+        gap: 1px;
+      }
+
+      .space-y-3 &gt;
+      :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+      }
+
+      .overflow-y-auto {
+        overflow-y: auto;
+      }
+
+      .rounded {
+        border-radius: 0.25rem;
+      }
+
+      .rounded-full {
+        border-radius: 9999px;
+      }
+
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+
+      .rounded-xl {
+        border-radius: 0.75rem;
+      }
+
+      .border {
+        border-width: 1px;
+      }
+
+      .border-2 {
+        border-width: 2px;
+      }
+
+      .border-b {
+        border-bottom-width: 1px;
+      }
+
+      .border-l-2 {
+        border-left-width: 2px;
+      }
+
+      .border-r {
+        border-right-width: 1px;
+      }
+
+      .border-t {
+        border-top-width: 1px;
+      }
+
+      .border-blue-500\/70 {
+        border-color: #3b82f6b3;
+      }
+
+      .border-red-500\/70 {
+        border-color: #ef4444b3;
+      }
+
+      .border-white\/10 {
+        border-color: #ffffff1a;
+      }
+
+      .border-white\/20 {
+        border-color: #fff3;
+      }
+
+      .border-t-white\/80 {
+        border-top-color: #fffc;
+      }
+
+      .bg-black {
+        --tw-bg-opacity: 1;
+        background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+      }
+
+      .bg-black\/80 {
+        background-color: #000c;
+      }
+
+      .bg-blue-50 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
+      }
+
+      .bg-blue-500 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
+      }
+
+      .bg-blue-950\/30 {
+        background-color: #1725544d;
+      }
+
+      .bg-red-500 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
+      }
+
+      .bg-red-950\/30 {
+        background-color: #450a0a4d;
+      }
+
+      .bg-white\/10 {
+        background-color: #ffffff1a;
+      }
+
+      .bg-white\/5 {
+        background-color: #ffffff0d;
+      }
+
+      .p-1 {
+        padding: 0.25rem;
+      }
+
+      .p-4 {
+        padding: 1rem;
+      }
+
+      .p-6 {
+        padding: 1.5rem;
+      }
+
+      .p-8 {
+        padding: 2rem;
+      }
+
+      .py-8 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+      }
+
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+
+      .text-xs {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+
+      .font-bold {
+        font-weight: 700;
+      }
+
+      .font-medium {
+        font-weight: 500;
+      }
+
+      .tracking-tight {
+        letter-spacing: -0.025em;
+      }
+
+      .text-blue-400 {
+        --tw-text-opacity: 1;
+        color: rgb(96 165 250 / var(--tw-text-opacity, 1));
+      }
+
+      .text-blue-500 {
+        --tw-text-opacity: 1;
+        color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+      }
+
+      .text-indigo-600 {
+        --tw-text-opacity: 1;
+        color: rgb(79 70 229 / var(--tw-text-opacity, 1));
+      }
+
+      .text-red-400 {
+        --tw-text-opacity: 1;
+        color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+      }
+
+      .text-red-500 {
+        --tw-text-opacity: 1;
+        color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+      }
+
+      .text-rose-600 {
+        --tw-text-opacity: 1;
+        color: rgb(225 29 72 / var(--tw-text-opacity, 1));
+      }
+
+      .text-white {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+      }
+
+      .text-white\/40 {
+        color: #fff6;
+      }
+
+      .text-white\/60 {
+        color: #fff9;
+      }
+
+      .text-white\/70 {
+        color: #ffffffb3;
+      }
+
+      .text-white\/80 {
+        color: #fffc;
+      }
+
+      .antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .opacity-60 {
+        opacity: 0.6;
+      }
+
+      .opacity-80 {
+        opacity: 0.8;
+      }
+
+      .shadow-xl {
+        --tw-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
+        --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+          0 8px 10px -6px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+          var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+
+      .ring-1 {
+        --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+          var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+        --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+          calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+        box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+          var(--tw-shadow, 0 0 #0000);
+      }
+
+      .ring-white\/20 {
+        --tw-ring-color: #fff3;
+      }
+
+      .backdrop-blur-sm {
+        --tw-backdrop-blur: blur(4px);
+        -webkit-backdrop-filter: var(--tw-backdrop-blur)
+          var(--tw-backdrop-brightness) var(--tw-backdrop-contrast)
+          var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate)
+          var(--tw-backdrop-invert) var(--tw-backdrop-opacity)
+          var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+        backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+          var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale)
+          var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
+          var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
+          var(--tw-backdrop-sepia);
+      }
+
+      .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.15s;
+      }
+
+      .transition-colors {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.15s;
+      }
+
+      .transition-transform {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.15s;
+      }
+
+      .duration-150 {
+        transition-duration: 0.15s;
+      }
+
+      .duration-300 {
+        transition-duration: 0.3s;
+      }
+
+      :root {
+        --background: #fff;
+        --foreground: #171717;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #000;
+          --foreground: #ededed;
+        }
+      }
+
+      body {
+        color: var(--foreground);
+        background: var(--background);
+        font-family: var(
+          --font-geist-sans,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif
+        );
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #ffffff0d;
+        border-radius: 3px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #ffffff26;
+        border-radius: 3px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ffffff40;
+      }
+
+      button,
+      a {
+        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .hover\:bg-slate-100:hover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1));
+      }
+
+      @media (width &gt;= 640px) {
+        .sm\:h-14 {
+          height: 3.5rem;
+        }
+
+        .sm\:w-14 {
+          width: 3.5rem;
+        }
+
+        .sm\:text-2xl {
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .dark\:bg-blue-900\/30 {
+          background-color: #1e3a8a4d;
+        }
+
+        .dark\:text-indigo-400 {
+          --tw-text-opacity: 1;
+          color: rgb(129 140 248 / var(--tw-text-opacity, 1));
+        }
+
+        .dark\:text-rose-400 {
+          --tw-text-opacity: 1;
+          color: rgb(251 113 133 / var(--tw-text-opacity, 1));
+        }
+
+        .dark\:hover\:bg-slate-800:hover {
+          --tw-bg-opacity: 1;
+          background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
+        }
+      }
+
+      /*# sourceMappingURL=%5Broot%20of%20the%20server%5D__8ebb6d._.css.map*/
+    </style>
+  </head>
+  <body
+    class="geist_e531dabc-module__QGiZLq__variable geist_mono_68a01160-module__YLcDdW__variable antialiased vsc-initialized"
+  >
+    <main class="min-h-screen bg-black">
+      <div class="flex flex-row h-screen bg-black text-white">
+        <div class="w-80 border-r border-white/10 flex flex-col h-full">
+          <div class="p-6 border-b border-white/10">
+            <h1 class="text-xl font-medium tracking-tight">
+              Ultimate Tic-Tac-Toe
+            </h1>
+            <p class="text-sm text-white/60 mt-1">
+              claude 3.7 thinking vs o3-mini
+            </p>
+          </div>
+          <div class="flex-1 overflow-y-auto p-4 space-y-3">
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm choosing the center cell of the center board for my first
+                move. This is strategically strong as it gives me presence in
+                the most connected position on the board and forces my opponent
+                to play in the center board next.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                Picking the top-left corner in board 4 counters X’s center
+                control and sets up potential win chances.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm taking the center position in board 0, which is a strong
+                strategic opening move. This forces my opponent to play in the
+                center board (board 4) where I already have an X in the center
+                position, giving me some control there.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I chose the opposite corner in board 4 to set up a future fork
+                and send the opponent to an empty board (board 8).
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm choosing the center position (cell 4) of board 8. This is
+                strategically strong in any tic-tac-toe board and will force my
+                opponent to play in board 4, where I already have the center
+                position and they'll be somewhat restricted with O already
+                occupying two corners.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I play in board 4 cell 6 to build dual threats (column0 and
+                bottom row) and send you to an empty board6.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                Taking the center position in board 6 gives me the strongest
+                strategic position while forcing my opponent to play in board 4
+                where they have limited options due to existing pieces.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                Board 4 has an immediate win. By placing at cell 7, I complete
+                the bottom row (cells 6,7,8) and win board 4, securing the
+                important center.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'll place my X in the top-left corner of board 7, which will
+                send my opponent to board 0 where I already have a strategic
+                advantage with an X in the center.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I choose the top‐right corner (cell 2) in board 0 to start
+                building a win there while sending the opponent to an empty
+                board (board 2).
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'll take the center position (cell 4) in board 2 to establish
+                control. While this sends my opponent to board 4 which is
+                already won (giving them freedom to play anywhere), controlling
+                the center of board 2 gives me the best chance to win this small
+                board and build toward my diagonal strategy across the main
+                board.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I choose to begin building a win on the middle row (boards
+                3,4,5) by starting in board 3. Playing in cell 1 forces the
+                opponent into board 1—an empty and neutral board—reducing their
+                early center advantages.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm placing my X in the top-right corner of board 1, which
+                forces my opponent to play on board 2 where I already have the
+                center position. This gives me a strategic advantage as I can
+                build toward winning board 2 while limiting my opponent's
+                options.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I choose a corner in board 2 (top-left) to set up dual threats
+                (aiming for the top row and left column) while forcing X to play
+                in board 0, where I already have a mark.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm placing my X in the top-left corner of board 0. This creates
+                multiple winning threats along the diagonal with my existing
+                center X, and sets up potential winning lines. This strategic
+                position gives me multiple paths to win this small board while
+                forcing my opponent back to this board where I now have a
+                developing advantage.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                Blocking X's potential win on the diagonal by filling cell 8 in
+                board 0.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm placing my X in the bottom-right corner of board 8, creating
+                a diagonal threat with my existing X in the center. This forces
+                my opponent to play in board 8 again, but with fewer options,
+                while setting up a potential win for me on my next turn. If I
+                eventually win board 8, it would also create a diagonal threat
+                on the main board against O's center position.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                Choosing the top‐left (cell 0) in board 8 creates dual threats
+                (row and column) and sends the opponent to board 0—critical for
+                a future 0-4-8 diagonal win.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'll play in the bottom-left corner of board 0 to create a
+                vertical threat and force my opponent to play in board 6 where I
+                already control the center.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I chose a corner move to counter the center X in board 6.
+                Playing in cell 2 both sets up a future threat in board 6 and
+                sends X to board 2, which is more balanced than boards with
+                clear X threats.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm playing in the bottom-right corner of board 2 to create a
+                diagonal threat with my X in the center. This forces my opponent
+                to defend and sends them to board 8 where I already have an X
+                presence.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I play in board 8 to build a threat (two O's in the top row) and
+                force X into board 1, which is relatively neutral.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm placing my X in the center of board 1, which is a
+                strategically strong position. This gives me multiple potential
+                winning paths (horizontal, vertical, and diagonal). Since this
+                move sends my opponent to board 4, which is already won by O (as
+                shown in the main board), they'll be free to choose any
+                available board for their next move, but I've established a
+                strong position in this board.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                Board 8 has a clear winning move. Placing an O at cell 2
+                completes the top row and wins that small board, strengthening
+                my position on the main board.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm placing my X in the top-right corner of board 2, creating a
+                diagonal threat with my existing pieces and forcing my opponent
+                to play in the same board again. This gives me control of the
+                game flow and creates multiple winning threats.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I choose board2 cell3 to build a column threat (with my O
+                already at cell0) and send X to board3, which already has an O,
+                limiting their immediate win chances.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm playing in the center of board 3 to establish control and
+                create multiple winning opportunities. This forces my opponent
+                to choose any available board since they've already won board 4.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I play in board 2 at cell 6 to complete the column (cells 0, 3,
+                6) and win that sub-board.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm placing my X in cell 1 of board 6. This sets up a potential
+                vertical win with my existing X in the center, and sends my
+                opponent to board 1, where I already have two X marks,
+                potentially limiting their options.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I play at cell 3 in board 1 because it sends the opponent to
+                board 3 which has an O already and no immediate winning move for
+                X, avoiding dangerous boards like board1 or board6.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'm placing my X in the bottom-left corner of board 3, creating
+                a diagonal threat with the center. This forces my opponent to
+                block or risk losing the board, and if they block by playing in
+                the top-right, they'll send me to a board they've already won,
+                giving me free choice for my next move.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I’m blocking X’s two-in-a-row in column 1 (cells 1,4,7) on board
+                6, which is crucial for the main board diagonal win.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-blue-950/30 border-l-2 border-blue-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span
+                ><span class="font-medium text-sm">claude 3.7 thinking</span>
+              </div>
+              <p class="text-sm text-white/80">
+                I'll take the center position of board 7 to establish control
+                and create multiple potential winning paths. This is a strong
+                strategic position that will help me develop this board.
+              </p>
+            </div>
+            <div
+              class="rounded-lg p-4 bg-red-950/30 border-l-2 border-red-500/70"
+            >
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span
+                ><span class="font-medium text-sm">o3-mini</span>
+              </div>
+              <p class="text-sm text-white/80">Board0 has an immediate</p>
+            </div>
+          </div>
+          <div class="p-4 border-t border-white/10">
+            <div class="font-medium"><!-- -->o3-mini wins the game! 🎉</div>
+          </div>
+        </div>
+        <div class="flex-1 flex items-center justify-center p-8">
+          <div class="bg-white/5 rounded-xl p-6 backdrop-blur-sm shadow-xl">
+            <div class="grid grid-cols-3 gap-2">
+              <div class="relative rounded opacity-60">
+                <div
+                  class="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm rounded z-10"
+                >
+                  <span class="text-5xl font-bold text-red-500">O</span>
+                </div>
+                <div
+                  class="grid grid-cols-3 gap-px bg-white/5 p-1 rounded transition-colors"
+                >
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 0"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 1"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 2"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 3"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 4"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 5"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 6"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 7"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 8"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="relative rounded opacity-60">
+                <div
+                  class="grid grid-cols-3 gap-px bg-white/5 p-1 rounded transition-colors"
+                >
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 0"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 1"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 2"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 3"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 4"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 5"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 6"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 7"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 8"
+                  ></div>
+                </div>
+              </div>
+              <div class="relative rounded opacity-60">
+                <div
+                  class="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm rounded z-10"
+                >
+                  <span class="text-5xl font-bold text-red-500">O</span>
+                </div>
+                <div
+                  class="grid grid-cols-3 gap-px bg-white/5 p-1 rounded transition-colors"
+                >
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 0"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 1"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 2"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 3"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 4"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 5"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 6"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 7"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 8"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="relative rounded opacity-60">
+                <div
+                  class="grid grid-cols-3 gap-px bg-white/5 p-1 rounded transition-colors"
+                >
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 0"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 1"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 2"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 3"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 4"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 5"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 6"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 7"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 8"
+                  ></div>
+                </div>
+              </div>
+              <div class="relative rounded opacity-60">
+                <div
+                  class="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm rounded z-10"
+                >
+                  <span class="text-5xl font-bold text-red-500">O</span>
+                </div>
+                <div
+                  class="grid grid-cols-3 gap-px bg-white/5 p-1 rounded transition-colors"
+                >
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 0"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 1"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 2"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 3"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 4"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 5"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 6"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 7"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 8"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="relative rounded ring-1 ring-white/20">
+                <div
+                  class="grid grid-cols-3 gap-px bg-white/5 p-1 rounded transition-colors"
+                >
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 0"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 1"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 2"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 3"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 4"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 5"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 6"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 7"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 8"
+                  ></div>
+                </div>
+              </div>
+              <div class="relative rounded opacity-60">
+                <div
+                  class="grid grid-cols-3 gap-px bg-white/5 p-1 rounded transition-colors"
+                >
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 0"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 1"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 2"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 3"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 4"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 5"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 6"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 7"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 8"
+                  ></div>
+                </div>
+              </div>
+              <div class="relative rounded opacity-60">
+                <div
+                  class="grid grid-cols-3 gap-px bg-white/5 p-1 rounded transition-colors"
+                >
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 0"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 1"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 2"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 3"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 4"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 5"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 6"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 7"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 8"
+                  ></div>
+                </div>
+              </div>
+              <div class="relative rounded opacity-60">
+                <div
+                  class="absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm rounded z-10"
+                >
+                  <span class="text-5xl font-bold text-red-500">O</span>
+                </div>
+                <div
+                  class="grid grid-cols-3 gap-px bg-white/5 p-1 rounded transition-colors"
+                >
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 0"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 1"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 2"
+                  >
+                    <span
+                      class="&#10; text-red-400&#10; transform transition-transform duration-150&#10;"
+                      >O</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 3"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 4"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 5"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 6"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/5&#10;"
+                    aria-label="Cell 7"
+                  ></div>
+                  <div
+                    class="&#10; w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-xl sm:text-2xl font-medium&#10; rounded transition-all duration-150&#10; bg-white/10&#10;"
+                    aria-label="Cell 8"
+                  >
+                    <span
+                      class="&#10; text-blue-400&#10; transform transition-transform duration-150&#10;"
+                      >X</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <nextjs-portal></nextjs-portal
+    ><next-route-announcer style="position: absolute"></next-route-announcer
+    ><iframe
+      id="Ugm3YZnC"
+      frameborder="0"
+      src="chrome-extension://ekhagklcjbdpajgpjgmbionohlpdbjgc/translateSandbox/translateSandbox.html"
+      style="width: 0px; height: 0px; display: none"
+    ></iframe>
+  </body>
+</html>
